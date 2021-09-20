@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 import { TodaysPhoto } from "../types";
 import { getFavorites, removeFavorite } from "../utils";
@@ -27,9 +28,26 @@ const favorites = () => {
           <h2 className="text-3xl tracking-tight font-extrabold text-green sm:text-4xl">
             Your favorite photos
           </h2>
-          <p className="font-mono mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-            I see Earth!
-          </p>
+          {favorites.length > 0 && (
+            <p className="font-mono mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+              I see Earth!
+            </p>
+          )}
+
+          {favorites.length === 0 && (
+            <>
+              <p className="font-mono mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                There are not any images on your favorites yet. <br />
+              </p>
+              <Link href="/">
+                <a>
+                  <p className="font-mono mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4 underline cursor-pointer">
+                    I want to browse images.
+                  </p>
+                </a>
+              </Link>
+            </>
+          )}
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {favorites.map((favorite) => (
