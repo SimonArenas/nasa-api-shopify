@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [showCalendar, setShowCalendar] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Data provider
   const data = useMemo(
     () => ({
       data: apiData,

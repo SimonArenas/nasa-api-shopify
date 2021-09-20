@@ -4,7 +4,7 @@ export const getFavorites = () => {
   return JSON.parse(localStorage.getItem(FAVORITES) || "[]");
 };
 
-export const addFavorites = (data: any) => {
+export const addFavorites = (data: {}) => {
   let favorites = getFavorites();
   favorites.push(data);
   localStorage.setItem(FAVORITES, JSON.stringify(favorites));

@@ -14,7 +14,7 @@ const Favorites = () => {
     setFavorites(getFavorites());
   }, [favoritesUpdated]);
 
-  const removeFromFavorites = (favorite: any) => {
+  const removeFromFavorites = (favorite: {}) => {
     removeFavorite(favorite);
     setFavoritesUpdated(!favoritesUpdated);
   };

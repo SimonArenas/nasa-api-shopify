@@ -8,8 +8,8 @@ import DataContext from "../../context/DataContext";
 
 const CalendarModal = () => {
   const [date, setDate] = useState(undefined);
-  const today = new Date();
   const [formatDate, setFormatDate] = useState<string>("");
+  const today = new Date();
   const context = useContext(DataContext);
 
   const onChange = (dateSelected: any) => {
