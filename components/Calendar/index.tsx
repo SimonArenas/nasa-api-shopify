@@ -25,7 +25,6 @@ const CalendarModal = () => {
       .then((data) => context?.setData(data))
       .finally(() => {
         context?.setShowPhoto(true);
-        context?.setIsFirstFetchCached(false);
         context?.setIsLoading(false);
       });
   };

@@ -1,4 +1,4 @@
-interface TodaysPhoto {
+export interface TodaysPhoto {
   copyright?: string;
   date?: string;
   explanation?: string;

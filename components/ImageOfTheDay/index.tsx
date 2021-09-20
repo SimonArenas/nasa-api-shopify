@@ -1,5 +1,22 @@
+import { HeartIcon } from "@heroicons/react/outline";
+import { HeartIcon as HeartIconSolid } from "@heroicons/react/solid";
+import { useEffect, useState } from "react";
+
+import { addFavorites, isFavorited, removeFavorite } from "../../utils";
+
 const ImageOfTheDay = ({ data }: any) => {
   const { copyright, date, explanation, title, url } = data;
+  const [favorite, setFavorite] = useState(false);
+
+  const handleFavorite = (id: any) => {
+    setFavorite(!favorite);
+
+    !favorite ? addFavorites(data) : removeFavorite(id);
+  };
+
+  useEffect(() => {
+    isFavorited(data) && setFavorite(true);
+  }, [data]);
 
   if (data.code === 400) {
     return (
@@ -32,11 +49,32 @@ const ImageOfTheDay = ({ data }: any) => {
               alt="Date selected"
             />
           </div>
+
           <div className="relative max-w-7xl mx-auto px-4 py-8 sm:py-12 sm:px-6 lg:py-16">
             <div className="max-w-2xl mx-auto lg:max-w-none lg:mr-0 lg:ml-auto lg:w-1/2 lg:pl-10">
-              <h2 className="mt-6 text-3xl font-extrabold text-orange sm:text-4xl">
-                {title}
-              </h2>
+              <div className="flex items-center">
+                <h2 className="text-3xl font-extrabold text-orange sm:text-4xl">
+                  {title}
+                </h2>
+                <button
+                  type="button"
+                  onClick={() => handleFavorite(data)}
+                  className="ml-4 py-3 px-3 rounded-md flex items-center justify-center hover:bg-gray-100
+                 "
+                >
+                  {favorite ? (
+                    <HeartIconSolid
+                      className="h-6 w-6 flex-shrink-0 hover:text-gray-500 text-red-500"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <HeartIcon
+                      className="h-6 w-6 flex-shrink-0 hover:text-gray-500 text-gray-400"
+                      aria-hidden="true"
+                    />
+                  )}
+                </button>
+              </div>
               <p className="mt-6 text-lg text-gray-500">{explanation}</p>
               <div className="mt-8 overflow-hidden">
                 <dl className="-mx-8 -mt-8 flex flex-wrap">

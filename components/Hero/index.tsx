@@ -5,20 +5,20 @@ import { Fragment, useContext } from "react";
 import { getTodaysPhoto } from "../../api";
 import { showCalendar } from "../../context/DataActions";
 import DataContext from "../../context/DataContext";
-import Logo from "../Logo";
 
 const Hero = () => {
   const context = useContext(DataContext);
 
   const searchTodaysPhoto = () => {
-    if (!context?.isFirstFetchCached) {
-      context?.setIsLoading(true);
-      context?.setShowPhoto(false);
-      getTodaysPhoto().then((data) => context?.setData(data));
-    }
-    context?.setIsLoading(false);
-    context?.setShowPhoto(true);
-    context?.setShowCalendar(false);
+    context?.setIsLoading(true);
+    context?.setShowPhoto(false);
+    getTodaysPhoto()
+      .then((data) => context?.setData(data))
+      .finally(() => {
+        context?.setIsLoading(false);
+        context?.setShowPhoto(true);
+        context?.setShowCalendar(false);
+      });
   };
 
   return (
@@ -41,11 +41,7 @@ const Hero = () => {
                 className="relative flex items-center justify-between sm:h-10 lg:justify-start"
                 aria-label="Global"
               >
-                <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-                  <div className="flex items-center justify-between w-full md:w-auto">
-                    <Logo />
-                  </div>
-                </div>
+                <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0" />
               </nav>
             </div>
 
@@ -63,11 +59,7 @@ const Hero = () => {
                 className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
               >
                 <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-                  <div className="px-5 pt-4 flex items-center justify-between">
-                    <div>
-                      <Logo />
-                    </div>
-                  </div>
+                  <div className="px-5 pt-4 flex items-center justify-between" />
                 </div>
               </Popover.Panel>
             </Transition>

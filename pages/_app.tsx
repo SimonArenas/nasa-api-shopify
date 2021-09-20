@@ -1,9 +1,9 @@
 import "tailwindcss/tailwind.css";
 
 import type { AppProps } from "next/app";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
-import { getTodaysPhoto } from "../api";
+import Navbar from "../components/Navbar";
 import DataContext from "../context/DataContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -11,11 +11,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [showPhoto, setShowPhoto] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isFirstFetchCached, setIsFirstFetchCached] = useState(true);
-
-  useEffect(() => {
-    getTodaysPhoto().then((data) => setApiData(data));
-  }, []);
 
   const data = useMemo(
     () => ({
@@ -27,8 +22,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       setShowCalendar,
       isLoading,
       setIsLoading,
-      isFirstFetchCached,
-      setIsFirstFetchCached,
     }),
     [
       apiData,
@@ -39,13 +32,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       setShowCalendar,
       isLoading,
       setIsLoading,
-      isFirstFetchCached,
-      setIsFirstFetchCached,
     ]
   );
 
   return (
     <DataContext.Provider value={data}>
+      <Navbar />
       <Component {...pageProps} />
     </DataContext.Provider>
   );
