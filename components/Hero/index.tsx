@@ -5,7 +5,6 @@ import Logo from "../Logo";
 import DataContext from "../../context/DataContext";
 import { showCalendar } from "../../context/DataActions";
 import { getTodaysPhoto } from "../../api";
-import Loading from "../Loading";
 
 const Hero = () => {
   const context = useContext(DataContext);
@@ -81,7 +80,7 @@ const Hero = () => {
               <p className="font-mono mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:my-10 md:text-xl lg:mx-0">
                 Select any date and be surprised by{" "}
                 <span className="font-semibold">
-                  NASA's Astronomic Photo of the day
+                  NASA&apos;s Astronomic Photo of the day
                 </span>
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
@@ -90,7 +89,7 @@ const Hero = () => {
                   className="rounded-md shadow"
                 >
                   <p className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green hover:bg-green-600 md:py-4 md:text-lg md:px-10 cursor-pointer">
-                    Today's photo
+                    Today&apos;s photo
                   </p>
                 </div>
                 <div
