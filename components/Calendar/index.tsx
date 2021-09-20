@@ -30,7 +30,7 @@ const CalendarModal = () => {
   };
 
   return (
-    <div className="w-2/4 mx-auto my-12">
+    <div className="px-6 md:w-3/5 mx-auto my-12">
       <DatePicker
         id="datePicker-1"
         value={date}

@@ -40,7 +40,7 @@ const Favorites = () => {
             )}
 
             {favorites.length === 0 && (
-              <>
+              <div className="pt-6">
                 <p className="font-mono mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
                   There are not any images on your favorites yet. <br />
                 </p>
@@ -51,7 +51,7 @@ const Favorites = () => {
                     </p>
                   </a>
                 </Link>
-              </>
+              </div>
             )}
           </div>
           <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
