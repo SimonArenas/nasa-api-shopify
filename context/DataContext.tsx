@@ -7,6 +7,10 @@ export interface DataContextType {
   setShowPhoto: (value: boolean) => void;
   showCalendar: boolean;
   setShowCalendar: (value: boolean) => void;
+  isLoading: boolean;
+  setIsLoading: (value: boolean) => void;
+  isFirstFetchCached: boolean;
+  setIsFirstFetchCached: (value: boolean) => void;
 }
 
 const DataContext = createContext<DataContextType | undefined>(undefined);

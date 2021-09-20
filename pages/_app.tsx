@@ -8,6 +8,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [apiData, setApiData] = useState({});
   const [showPhoto, setShowPhoto] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isFirstFetchCached, setIsFirstFetchCached] = useState(true);
 
   useEffect(() => {
     getTodaysPhoto().then((data) => setApiData(data));
@@ -21,6 +23,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       setShowPhoto,
       showCalendar,
       setShowCalendar,
+      isLoading,
+      setIsLoading,
+      isFirstFetchCached,
+      setIsFirstFetchCached,
     }),
     [
       apiData,
@@ -29,6 +35,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       setShowPhoto,
       showCalendar,
       setShowCalendar,
+      isLoading,
+      setIsLoading,
+      isFirstFetchCached,
+      setIsFirstFetchCached,
     ]
   );
 

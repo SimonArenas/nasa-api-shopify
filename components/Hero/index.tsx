@@ -5,16 +5,20 @@ import Logo from "../Logo";
 import DataContext from "../../context/DataContext";
 import { showCalendar } from "../../context/DataActions";
 import { getTodaysPhoto } from "../../api";
+import Loading from "../Loading";
 
 const Hero = () => {
   const context = useContext(DataContext);
 
   const searchTodaysPhoto = () => {
-    if (context?.showCalendar) {
-      console.log("pasa por aca ", context.showCalendar);
+    if (!context?.isFirstFetchCached) {
+      context?.setIsLoading(true);
+      context?.setShowPhoto(false);
       getTodaysPhoto().then((data) => context?.setData(data));
     }
+    context?.setIsLoading(false);
     context?.setShowPhoto(true);
+    context?.setShowCalendar(false);
   };
 
   return (

@@ -4,6 +4,7 @@ import { showCalendar } from "../../context/DataActions";
 import DataContext from "../../context/DataContext";
 import moment from "moment";
 import { getPhotoFromDate } from "../../api";
+import Loading from "../Loading";
 
 const CalendarModal = () => {
   const [date, setDate] = useState(undefined);
@@ -17,9 +18,16 @@ const CalendarModal = () => {
   };
 
   const searchPhotoByDate = () => {
+    context?.setIsLoading(true);
+    context?.setShowPhoto(false);
+
     getPhotoFromDate(formatDate)
       .then((data) => context?.setData(data))
-      .finally(() => context?.setShowPhoto(true));
+      .finally(() => {
+        context?.setShowPhoto(true);
+        context?.setIsFirstFetchCached(false);
+        context?.setIsLoading(false);
+      });
   };
 
   return (

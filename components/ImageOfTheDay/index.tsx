@@ -25,7 +25,7 @@ const ImageOfTheDay = ({ data }: any) => {
     <>
       {data.date && (
         <div className="relative bg-white">
-          <div className="h-56 bg-indigo-600 sm:h-72 lg:absolute lg:left-0 lg:h-full lg:w-1/2">
+          <div className="h-56 bg-green sm:h-72 lg:absolute lg:left-0 lg:h-full lg:w-1/2">
             <img
               className="w-full h-full object-cover"
               src={url}
