@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 
 import Navbar from "../components/Navbar";
 import DataContext from "../context/DataContext";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [apiData, setApiData] = useState({});
@@ -39,6 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <DataContext.Provider value={data}>
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </DataContext.Provider>
   );
 }
