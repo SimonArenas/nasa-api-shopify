@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Head from "next/head";
 
 import CalendarModal from "../components/Calendar";
 import Hero from "../components/Hero";
@@ -11,6 +12,9 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Space wander 🚀 </title>
+      </Head>
       <Hero />
       {context?.showCalendar && <CalendarModal />}
       {context?.showPhoto && <ImageOfTheDay data={context?.data} />}
