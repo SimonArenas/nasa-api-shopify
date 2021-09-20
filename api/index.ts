@@ -1,5 +1,4 @@
-const API_TOKEN = "HRGY80iAn1ggfqT7oGOuu49stoGucBqGuCm1suR8";
-
+const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 export const getTodaysPhoto = async () => {
   try {
     const result = await fetch(
