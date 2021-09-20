@@ -3,9 +3,9 @@ import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
 import { useMemo, useState } from "react";
 
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import DataContext from "../context/DataContext";
-import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [apiData, setApiData] = useState({});

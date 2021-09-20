@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import Head from "next/head";
+import { useContext } from "react";
 
 import CalendarModal from "../components/Calendar";
 import Hero from "../components/Hero";

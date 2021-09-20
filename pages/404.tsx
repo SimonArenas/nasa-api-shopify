@@ -1,6 +1,7 @@
-import Logo from "../components/Logo";
-import Link from "next/link";
 import Head from "next/head";
+import Link from "next/link";
+
+import Logo from "../components/Logo";
 
 export default function Custom404() {
   return (

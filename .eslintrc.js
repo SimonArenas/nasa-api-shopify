@@ -15,6 +15,14 @@ module.exports = {
           "error",
           { devDependencies: true },
         ],
+        "@typescript-eslint/no-unused-expressions": [
+          "error",
+          {
+            allowShortCircuit: true,
+            allowTernary: true,
+            allowTaggedTemplates: true,
+          },
+        ],
         "import/prefer-default-export": "off",
         "react/react-in-jsx-scope": "off",
         "react/jsx-props-no-spreading": "off",
@@ -22,6 +30,7 @@ module.exports = {
         "react/prop-types": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "jsx-a11y/anchor-is-valid": "off",
       },
     },
   ],
@@ -30,5 +39,6 @@ module.exports = {
     "no-console": "off",
     "simple-import-sort/imports": "error",
     "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+    "no-unused-expressions": "off",
   },
 };

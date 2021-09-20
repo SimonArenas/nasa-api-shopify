@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import { HeartIcon as HeartIconSolid } from "@heroicons/react/solid";
 import Head from "next/head";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
 import { TodaysPhoto } from "../types";
 import { getFavorites, removeFavorite } from "../utils";
-import { HeartIcon as HeartIconSolid } from "@heroicons/react/solid";
 
-const favorites = () => {
+const Favorites = () => {
   const [favorites, setFavorites] = useState<TodaysPhoto[]>([]);
   const [favoritesUpdated, setFavoritesUpdated] = useState(false);
 
@@ -112,4 +112,4 @@ const favorites = () => {
   );
 };
 
-export default favorites;
+export default Favorites;

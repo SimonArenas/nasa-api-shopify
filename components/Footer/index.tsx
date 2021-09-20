@@ -26,7 +26,7 @@ const navigation = [
   {
     name: "Website",
     href: "https://www.simonarenas.mx/",
-    icon: (props: any) => (
+    icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
@@ -35,9 +35,9 @@ const navigation = [
         stroke="currentColor"
       >
         <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
           d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
         />
       </svg>
@@ -47,7 +47,7 @@ const navigation = [
 
 const Footer = () => {
   return (
-    <footer className="bg-white absolute bottom-0 left-0 w-screen">
+    <footer className="bg-white mt-12">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
         <div className="flex justify-center space-x-6 md:order-2">
           {navigation.map((item) => (

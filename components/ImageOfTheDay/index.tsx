@@ -11,11 +11,16 @@ const ImageOfTheDay = ({ data }: any) => {
   const handleFavorite = (id: any) => {
     setFavorite(!favorite);
 
-    !favorite ? addFavorites(data) : removeFavorite(id);
+    if (favorite) {
+      return removeFavorite(id);
+    }
+    return addFavorites(data);
   };
 
   useEffect(() => {
-    isFavorited(data) && setFavorite(true);
+    if (isFavorited(data)) {
+      setFavorite(true);
+    }
   }, [data]);
 
   if (data.code === 400) {
@@ -26,7 +31,7 @@ const ImageOfTheDay = ({ data }: any) => {
             <h2 className="text-base font-semibold text-orange tracking-wide uppercase">
               Error
             </h2>
-            <p className="mt-1 text-3xl font-extrabold text-gray-900 sm:text-3xl sm:tracking-tight lg:text-4xl">
+            <p className="mt-1 text-3xl font-extrabold text-gray-700 sm:text-3xl sm:tracking-tight lg:text-4xl">
               We can&apos;t find any photo with date provided 😔
             </p>
             <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
