@@ -79,7 +79,7 @@ const Hero = () => {
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <button
                   onClick={() => searchTodaysPhoto()}
-                  className="rounded-md shadow"
+                  className="rounded-md shadow mr-3"
                   type="button"
                 >
                   <p className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green hover:bg-green-600 md:py-4 md:text-lg md:px-10 cursor-pointer">
@@ -88,7 +88,7 @@ const Hero = () => {
                 </button>
                 <button
                   onClick={() => showCalendar(context)}
-                  className="mt-3 sm:mt-0 ml-3"
+                  className="mt-3 sm:mt-0 sm:ml-3"
                   type="button"
                 >
                   <p className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-700 bg-green-200 hover:bg-green-600 hover:text-white md:py-4 md:text-lg md:px-10 cursor-pointer">
