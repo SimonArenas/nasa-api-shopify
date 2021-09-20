@@ -10,7 +10,7 @@ const ImageOfTheDay = ({ data }: any) => {
               Error
             </h2>
             <p className="mt-1 text-3xl font-extrabold text-gray-900 sm:text-3xl sm:tracking-tight lg:text-4xl">
-              We can't find any photo with date provided 😔
+              We can&apos;t find any photo with date provided 😔
             </p>
             <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
               {data.msg}
@@ -29,7 +29,7 @@ const ImageOfTheDay = ({ data }: any) => {
             <img
               className="w-full h-full object-cover"
               src={url}
-              alt="Image of today"
+              alt="Date selected"
             />
           </div>
           <div className="relative max-w-7xl mx-auto px-4 py-8 sm:py-12 sm:px-6 lg:py-16">

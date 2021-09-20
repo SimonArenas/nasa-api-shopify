@@ -1,10 +1,10 @@
+import moment from "moment";
 import { useContext, useState } from "react";
 import { DatePicker } from "react-rainbow-components";
+
+import { getPhotoFromDate } from "../../api";
 import { showCalendar } from "../../context/DataActions";
 import DataContext from "../../context/DataContext";
-import moment from "moment";
-import { getPhotoFromDate } from "../../api";
-import Loading from "../Loading";
 
 const CalendarModal = () => {
   const [date, setDate] = useState(undefined);
@@ -12,9 +12,9 @@ const CalendarModal = () => {
   const [formatDate, setFormatDate] = useState<string>("");
   const context = useContext(DataContext);
 
-  const onChange = (date: any) => {
-    setFormatDate(moment(date).format("YYYY-MM-DD"));
-    setDate(date);
+  const onChange = (dateSelected: any) => {
+    setFormatDate(moment(dateSelected).format("YYYY-MM-DD"));
+    setDate(dateSelected);
   };
 
   const searchPhotoByDate = () => {

@@ -1,10 +1,11 @@
-import { Fragment, useContext } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import Image from "next/image";
-import Logo from "../Logo";
-import DataContext from "../../context/DataContext";
-import { showCalendar } from "../../context/DataActions";
+import { Fragment, useContext } from "react";
+
 import { getTodaysPhoto } from "../../api";
+import { showCalendar } from "../../context/DataActions";
+import DataContext from "../../context/DataContext";
+import Logo from "../Logo";
 
 const Hero = () => {
   const context = useContext(DataContext);
@@ -84,22 +85,24 @@ const Hero = () => {
                 </span>
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div
+                <button
                   onClick={() => searchTodaysPhoto()}
                   className="rounded-md shadow"
+                  type="button"
                 >
                   <p className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green hover:bg-green-600 md:py-4 md:text-lg md:px-10 cursor-pointer">
                     Today&apos;s photo
                   </p>
-                </div>
-                <div
+                </button>
+                <button
                   onClick={() => showCalendar(context)}
                   className="mt-3 sm:mt-0 sm:ml-3"
+                  type="button"
                 >
                   <p className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-700 bg-green-200 hover:bg-green-600 hover:text-white md:py-4 md:text-lg md:px-10 cursor-pointer">
                     Search by date
                   </p>
-                </div>
+                </button>
               </div>
             </div>
           </main>

@@ -1,8 +1,10 @@
 import "tailwindcss/tailwind.css";
+
 import type { AppProps } from "next/app";
-import DataContext from "../context/DataContext";
 import { useEffect, useMemo, useState } from "react";
+
 import { getTodaysPhoto } from "../api";
+import DataContext from "../context/DataContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [apiData, setApiData] = useState({});

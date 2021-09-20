@@ -1,5 +1,5 @@
-import type { GetServerSideProps, NextPage } from "next";
 import { useContext } from "react";
+
 import CalendarModal from "../components/Calendar";
 import Hero from "../components/Hero";
 import ImageOfTheDay from "../components/ImageOfTheDay";
