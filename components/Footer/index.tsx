@@ -62,7 +62,7 @@ const Footer = () => {
         <div className="mt-8 md:mt-0 md:order-1">
           <p className="text-center text-base text-gray-400">
             Made with <span className="px-1">❤️</span> by Simon Arenas -{" "}
-            <strong>Shopify Front End Developer Intern Challenge</strong>
+            <strong>Shopify Front End Developer Challenge</strong>
           </p>
         </div>
       </div>

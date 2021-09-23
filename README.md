@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project created for **Shopify Front End Developer Intern Challenge**. [See live demo](https://nasa-api-shopify.vercel.app/)🚀
+This is a [Next.js](https://nextjs.org/) project created for **Shopify Front End Developer Challenge**. [See live demo](https://nasa-api-shopify.vercel.app/)🚀
 
 📱 Mobile First
 🪐 Fetching data from [NASA APOD](https://apod.nasa.gov/apod/astropix.html) api
